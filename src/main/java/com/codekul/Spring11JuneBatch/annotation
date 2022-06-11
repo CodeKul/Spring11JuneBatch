@@ -1,0 +1,9 @@
+1. @Configuration
+	- indicates that the class is a source of bean definition
+
+2. @Bean
+
+3. @Component
+
+4. @Autowired
+	- used for dependency injection

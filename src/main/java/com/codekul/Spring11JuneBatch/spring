@@ -1,0 +1,87 @@
+framework
+ - reuse pre-written code(templates)
+
+Spring
+	- powerful & lightweight application development framework
+	-  a framework of frameworks because it supports various framework like struts,
+	hibernate,EJB & JSF
+
+Features
+1. Lightweight
+2. Inversion of Control(IoC)
+	- loosely coupling
+3. Aspect Oriented Programming(AOP)
+	- by separating the application business logic from system service
+4. Container
+	- creates & manages life of cycle & configuration of application objects
+5. MVC Framework
+	- configurable via interface & accommodates multiple view technologies
+6. Transaction Management
+	- provides a generic abstraction layer
+
+Why we used Spring?
+1. works on POJO(Plain Old Java Object)
+		by using this our application will be lightweight
+2. predefined templates for JDBC,Hibernate,JPA
+3. Because of Dependency Injection(DI), our code becomes loosely coupled
+4. development becomes faster
+5. supports for transaction,validation,caching
+
+Spring Framework Architecture
+1. Test
+	- layer provides support of testing with JUnit & TestNG
+2. Core Container
+	- contains core,beans,context & SpEL
+	a) core & beans
+		- provides IoC & DI features
+	b) Context
+		- supports internationalization(118N),EJB,JMS,Basic Remoting
+	d) SpEL(Expression Language)
+		- provides support to setting & getting property values, methods invocation,
+		accessing the collections,logical & arithmetic operators, retrieval of objects by name
+3. AOP
+	- use Advices, Pointcuts to decouple the code
+4. Aspect
+    - support to integration with AspectJ
+5. Instrumentation
+	- support to class instrumentation
+6. Messaging
+7. Data Access/Integration
+	- contains JDBC,ORM,OXM,JMS & Transaction
+	- provides support to interact with database
+8. Web
+	- contains WebSocket,Web,Servlet & Portlet
+	- provides support to create a web application
+
+
+IoC Container
+	- core of spring framework
+	- creates the objects, configures & assembles their dependencies, manages entire life cycle
+	of objects
+	- uses DI to manages the components that make up the application
+	- controlling of objects & their lifecycle
+
+Dependency Injection(DI)
+	- main functionality provided by IoC
+	- responsible for injecting dependencies thro' either constructor or setter method
+	- connecting the objects with other objects or injecting objects into other objects
+
+ApplicationContext
+	- represents the IoC container
+	- spring container is responsible for instantiating, configuring & assembling objects (Beans)
+	- Central interface to provide configuration for an application.
+
+Bean Factory
+	- The root interface for accessing a Spring bean container.
+
+@Configuration
+	- indicates that the class is a source of bean definition
+Spring Boot
+- advanced concept of Spring framework
+
+pom.xml
+	- contains information about the project & configuration details used by maven to build the project
+	- when executing the task,maven looks for the pom file in current directory
+	- maven reads the POM, gets the needed configuration details,then executes the task
+
+Explain Singleton class?
