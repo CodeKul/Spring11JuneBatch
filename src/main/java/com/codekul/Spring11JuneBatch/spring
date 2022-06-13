@@ -76,12 +76,15 @@ Bean Factory
 
 @Configuration
 	- indicates that the class is a source of bean definition
-Spring Boot
-- advanced concept of Spring framework
 
 pom.xml
 	- contains information about the project & configuration details used by maven to build the project
 	- when executing the task,maven looks for the pom file in current directory
 	- maven reads the POM, gets the needed configuration details,then executes the task
+Spring Boot
+- advanced concept of Spring framework
+- is it built on the top of the Spring framework
+- create a standalone Spring-Based application
+- provides RAD(Rapid Application Development feature
 
 Explain Singleton class?
