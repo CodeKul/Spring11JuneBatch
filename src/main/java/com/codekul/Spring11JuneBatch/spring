@@ -85,6 +85,43 @@ Spring Boot
 - advanced concept of Spring framework
 - is it built on the top of the Spring framework
 - create a standalone Spring-Based application
-- provides RAD(Rapid Application Development feature
+- provides RAD(Rapid Application Development) feature
+Restful
 
+
+How Spring Boot application works internally?
+ - starts using main method
+ - main method calls the run method(static)
+ - application context searches for the classes annotated with @Configuration
+    & initializes all the declared beans in those configuration classes
+ - based on scope of those beans, stores those beans in JVM
+ - specifically in IoC container
+ - after creation of all beans,automatically configures dispatch servlet
+ - register the default handler mappings
+
+spring-boot-starter-web
+	- for building web application using Spring MVC
+	- uses the tomcat as the default embedded container
+
+spring-boot-devtools
+	- for live reload or automatic reload of application
+
+spring-boot-starter-jdbc
+	- for communicating with the database
+
+lombok
+	- a java library that will reduce the boilerplate code
+	that we usually write inside the entity class like setters,getters,
+		& toString()
+
+mysql-connector-java
+	- store the data into the database
+
+
+
+Scope
+Devtools
+tomcat
+embedded
+undertow
 Explain Singleton class?
