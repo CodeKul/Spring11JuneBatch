@@ -7,3 +7,14 @@
 
 4. @Autowired
 	- used for dependency injection
+
+5. @Setter
+	- generates the setter methods
+
+6. @Getter
+	- generates the getter methods
+
+7. @AllArgsConstructor
+	- generates parameterised constructor with all the fields
+8. @NoArgsConstructor
+	- generates no arg constructor

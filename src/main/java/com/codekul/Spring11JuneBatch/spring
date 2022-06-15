@@ -117,6 +117,10 @@ lombok
 mysql-connector-java
 	- store the data into the database
 
+application.properties
+	- configures the application
+	- file allows to run an application in different environment
+
 
 
 Scope
