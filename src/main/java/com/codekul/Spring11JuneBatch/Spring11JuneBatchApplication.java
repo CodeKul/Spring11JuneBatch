@@ -11,16 +11,17 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class Spring11JuneBatchApplication {
 
 	public static void main(String[] args) {
-		ConfigurableApplicationContext applicationContext = SpringApplication.run(Spring11JuneBatchApplication.class, args);
-		BubbleSort bubbleSort = applicationContext.getBean(BubbleSort.class);
-		bubbleSort.sort();
-		bubbleSort.display();
-		InsertionSort insertionSort = applicationContext.getBean(InsertionSort.class);
-		insertionSort.display();
-		insertionSort.sort();
-
-		School school = applicationContext.getBean(School.class);
-		school.show();
+		SpringApplication.run(Spring11JuneBatchApplication.class, args);
+//		ConfigurableApplicationContext applicationContext = SpringApplication.run(Spring11JuneBatchApplication.class, args);
+//		BubbleSort bubbleSort = applicationContext.getBean(BubbleSort.class);
+//		bubbleSort.sort();
+//		bubbleSort.display();
+//		InsertionSort insertionSort = applicationContext.getBean(InsertionSort.class);
+//		insertionSort.display();
+//		insertionSort.sort();
+//
+//		School school = applicationContext.getBean(School.class);
+//		school.show();
 
 	}
 

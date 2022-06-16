@@ -18,3 +18,13 @@
 	- generates parameterised constructor with all the fields
 8. @NoArgsConstructor
 	- generates no arg constructor
+9. @RestController
+	- for making restful web services
+	- class level annotation
+	- allows the class to handle the requests which made by client
+	- allows to handle all the APIs like GET,POST,PUT,DELETE requests
+	- combination of @controller & @RequestBody
+
+10. @Repository
+	- a specialization of @Component annotation which is used to indicate that the class  provide the
+	mechanism for storage,retrieval,search,update,delete operations on objects

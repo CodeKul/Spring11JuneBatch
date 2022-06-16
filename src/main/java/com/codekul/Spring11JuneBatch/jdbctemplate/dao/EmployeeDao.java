@@ -5,6 +5,6 @@ import com.codekul.Spring11JuneBatch.jdbctemplate.entity.Employee;
 import java.util.List;
 
 public interface EmployeeDao {
-    void save(Employee e);
+    String save(Employee e);
     List<Employee> findAll();
 }
