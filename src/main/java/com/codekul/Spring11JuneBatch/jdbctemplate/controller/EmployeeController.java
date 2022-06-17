@@ -23,4 +23,9 @@ public class EmployeeController {
     public List<Employee> getAllEmployee(){
         return employeeDao.findAll();
     }
+
+    @GetMapping("/findById/{userId}")
+    public Employee findById(@PathVariable Long userId){
+        return employeeDao.findById(userId);
+    }
 }
