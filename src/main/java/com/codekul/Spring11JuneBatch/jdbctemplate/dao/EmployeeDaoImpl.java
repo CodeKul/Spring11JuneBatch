@@ -16,7 +16,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
     String findAll = "select * from employee";
     String findById = "select * from employee where id=?";
     String deleteById = "delete from employee where id=?";
-    String updateRecords = "update employee where id=?";
+    String updateRecords = "update employee set name=?, location=?,department=? where id=?";
     @Override
     public String save(Employee e) {
         jdbcTemplate.update(insertQuery,new Object[]{e.getName(),e.getLocation(),e.getDepartment()});
@@ -40,6 +40,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 
     @Override
     public int update(Long id, Employee e) {
-        return jdbcTemplate.update(updateRecords,id);
+
+        return jdbcTemplate.update(updateRecords,new Object[]{e.getName(),e.getLocation(),e.getDepartment(),id});
     }
 }

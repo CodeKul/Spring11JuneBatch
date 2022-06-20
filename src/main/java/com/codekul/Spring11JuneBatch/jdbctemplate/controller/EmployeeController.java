@@ -28,4 +28,15 @@ public class EmployeeController {
     public Employee findById(@PathVariable Long userId){
         return employeeDao.findById(userId);
     }
+    @PutMapping("/updateEmployee/{usedId}")
+    public String update(@RequestBody Employee employee,@PathVariable Long usedId){
+        employeeDao.update(usedId,employee);
+        return "Record updated successfully";
+    }
+    @DeleteMapping("/delete/{userId}")
+    public String delete(@PathVariable Long userId){
+        employeeDao.deleteById(userId);
+        return "Record deleted successfully";
+    }
 }
+
