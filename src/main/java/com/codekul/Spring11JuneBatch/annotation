@@ -28,3 +28,12 @@
 10. @Repository
 	- a specialization of @Component annotation which is used to indicate that the class  provide the
 	mechanism for storage,retrieval,search,update,delete operations on objects
+
+11.	@Entity
+	- defines that a class can be mapped to a table
+
+12.  @Id
+    - specifies the primary key
+13. @GeneratedValue
+	- auto increment
+

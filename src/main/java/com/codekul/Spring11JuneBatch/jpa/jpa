@@ -1,0 +1,23 @@
+foreign key
+	- a column in one table, that refers to the primary key in another table
+
+Relationships:
+1. One To One
+	- a record in one entity is associated with exactly one record of another entity
+	eg.
+		each country has exactly one capital
+
+2. One To Many
+	- a record in one entity is associated with multiple records of another entity
+	eg.
+	    one post having multiple comments
+
+3. Many To One
+	- multiple records associate with single entity
+
+4. Many To Many
+	- multiple records in one entity associate with multiple records in another table
+
+JPA
+	- Java Persistence API
+	- allows to access & persist data between Java Object/class & relational DB
