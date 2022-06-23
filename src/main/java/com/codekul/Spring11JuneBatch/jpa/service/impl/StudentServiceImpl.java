@@ -4,9 +4,10 @@ import com.codekul.Spring11JuneBatch.jpa.model.Student;
 import com.codekul.Spring11JuneBatch.jpa.repository.StudentRepository;
 import com.codekul.Spring11JuneBatch.jpa.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentRepository studentRepository;

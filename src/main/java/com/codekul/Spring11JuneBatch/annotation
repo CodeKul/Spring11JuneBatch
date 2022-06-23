@@ -37,3 +37,8 @@
 13. @GeneratedValue
 	- auto increment
 
+14. @PostMapping
+	- maps HTTP post requests
+
+15. @Service
+	- used with classes that provide some business functionalities
