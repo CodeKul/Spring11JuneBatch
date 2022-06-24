@@ -22,4 +22,14 @@ public class StudentServiceImpl implements StudentService {
     public void saveStudent(Student student) {
         studentRepository.save(student);
     }
+
+    @Override
+    public void deleteById(Long id) {
+        studentRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Student> findAllStudents() {
+        return studentRepository.findAll();
+    }
 }
