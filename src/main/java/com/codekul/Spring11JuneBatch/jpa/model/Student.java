@@ -19,8 +19,8 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-   // @NotNull(message = "Name cannot be null")
-    //@NotEmpty
+    @NotNull(message = "Name cannot be null")
+    @NotEmpty
     @NotBlank
     private String name;
 

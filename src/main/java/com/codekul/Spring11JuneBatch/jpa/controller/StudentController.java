@@ -19,6 +19,12 @@ public class StudentController {
         return "Student saved successfully";
     }
 
+    @PostMapping("/saveAllStudent")
+    public String saveAllStudent(@RequestBody List<Student> student){
+        studentService.saveAllStudent(student);
+        return "Student saved successfully";
+    }
+
     @GetMapping("/getStudentByName/{name}")
     public List<Student> findStudentByName(@PathVariable String name){
        return studentService.findByName(name);

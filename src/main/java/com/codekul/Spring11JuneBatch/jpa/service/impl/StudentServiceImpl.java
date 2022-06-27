@@ -32,4 +32,9 @@ public class StudentServiceImpl implements StudentService {
     public List<Student> findAllStudents() {
         return studentRepository.findAll();
     }
+
+    @Override
+    public void saveAllStudent(List<Student> students) {
+        studentRepository.saveAll(students);
+    }
 }

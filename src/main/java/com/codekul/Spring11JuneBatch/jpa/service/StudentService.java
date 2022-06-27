@@ -11,4 +11,6 @@ public interface StudentService {
     void deleteById(Long id);
 
     List<Student> findAllStudents();
+
+    void saveAllStudent(List<Student> students);
 }
