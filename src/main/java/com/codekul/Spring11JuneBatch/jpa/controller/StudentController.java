@@ -30,7 +30,7 @@ public class StudentController {
        return studentService.findByName(name);
     }
     @DeleteMapping("/deleteById")
-    public String deleteStudentById(@RequestParam Long id){
+    public String deleteStudentById(@RequestParam Long id,@RequestParam String name){
         studentService.deleteById(id);
         return "Record deleted successfully";
     }
