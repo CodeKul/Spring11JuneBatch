@@ -25,3 +25,5 @@ JPA
 
 Swagger
 	- provides a user interface to access RESTful web services via web browser.
+
+Cascading

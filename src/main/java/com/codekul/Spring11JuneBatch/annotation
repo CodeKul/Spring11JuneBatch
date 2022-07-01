@@ -42,3 +42,8 @@
 
 15. @Service
 	- used with classes that provide some business functionalities
+
+16. @JoinColumn
+	- used to join a new column, this will be the foreign key column
+
+17.  @JsonManagedReference
