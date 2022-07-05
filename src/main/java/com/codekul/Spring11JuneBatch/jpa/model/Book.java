@@ -1,8 +1,14 @@
 package com.codekul.Spring11JuneBatch.jpa.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.List;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "books")
 public class Book {
@@ -15,6 +21,7 @@ public class Book {
 
     @Column(unique = true)
     private String isbn;
+    @JsonManagedReference
     @OneToMany(mappedBy = "book",cascade = CascadeType.ALL)
     private List<Page> pages;
 

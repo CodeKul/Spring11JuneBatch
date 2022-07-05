@@ -1,7 +1,13 @@
 package com.codekul.Spring11JuneBatch.jpa.model;
 
-import javax.persistence.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.*;
+@Getter
+@Setter
 @Entity
 @Table(name = "pages")
 public class Page {
@@ -11,6 +17,7 @@ public class Page {
 
     private Integer number;
     private String content;
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "book_id")
     private Book book;
