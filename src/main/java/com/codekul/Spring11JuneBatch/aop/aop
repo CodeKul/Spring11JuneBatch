@@ -1,0 +1,8 @@
+- Aspect Oriented Programming
+- major feature
+- helps in breaking down the logic of the program into several distinct parts called as concerns
+- cross cutting concerns is the functions which span multiple points of an application
+- cross cutting concerns help in increasing modularity & separate it from the business logic of an application
+
+Need for Spring AOP
+- provides pluggable way of dynamically adding additional concern before, after or around the actual logic

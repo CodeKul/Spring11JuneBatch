@@ -9,6 +9,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -44,4 +45,15 @@ public class Student {
     @OneToOne(mappedBy = "student",cascade = CascadeType.ALL)
     private StudentProfile studentProfile;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "student_courses", joinColumns = {@JoinColumn(name = "student_id")},
+    inverseJoinColumns = {@JoinColumn(name = "course_id")})
+    private List<Course> courses;
+
 }
+/**
+ * create course repo
+ * create course controller
+ * get all courses
+ * save courses
+ */
