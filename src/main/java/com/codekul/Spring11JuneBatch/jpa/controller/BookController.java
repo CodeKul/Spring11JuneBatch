@@ -1,5 +1,6 @@
 package com.codekul.Spring11JuneBatch.jpa.controller;
 
+import com.codekul.Spring11JuneBatch.jpa.dto.response.CalculatePagesResponse;
 import com.codekul.Spring11JuneBatch.jpa.model.Book;
 import com.codekul.Spring11JuneBatch.jpa.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,13 @@ public class BookController {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
                         String.format("Book with id %d is not found",bookId))));
     }
+
+    @GetMapping("{title}")
+    public ResponseEntity<?> calculatePages(@PathVariable String title){
+        CalculatePagesResponse response = bookService.calculateNoOfPages(title);
+        return ResponseEntity.ok(response);
+
+    }
+
 
 }

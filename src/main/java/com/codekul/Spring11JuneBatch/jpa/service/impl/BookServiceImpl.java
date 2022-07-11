@@ -1,5 +1,6 @@
 package com.codekul.Spring11JuneBatch.jpa.service.impl;
 
+import com.codekul.Spring11JuneBatch.jpa.dto.response.CalculatePagesResponse;
 import com.codekul.Spring11JuneBatch.jpa.model.Book;
 import com.codekul.Spring11JuneBatch.jpa.repository.BookRepository;
 import com.codekul.Spring11JuneBatch.jpa.service.BookService;
@@ -20,5 +21,10 @@ public class BookServiceImpl implements BookService {
     @Override
     public Optional<Book> findBookById(Long bookId) {
         return bookRepository.findById(bookId);
+    }
+
+    @Override
+    public CalculatePagesResponse calculateNoOfPages(String title) {
+        return bookRepository.calculateNoOfPages(title);
     }
 }
