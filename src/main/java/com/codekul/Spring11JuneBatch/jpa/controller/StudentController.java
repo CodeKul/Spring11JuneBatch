@@ -2,11 +2,13 @@ package com.codekul.Spring11JuneBatch.jpa.controller;
 
 import com.codekul.Spring11JuneBatch.jpa.model.Student;
 import com.codekul.Spring11JuneBatch.jpa.service.StudentService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/student/")
 public class StudentController {
@@ -29,6 +31,7 @@ public class StudentController {
     public List<Student> findStudentByName(@PathVariable String name){
        return studentService.findByName(name);
     }
+
     @DeleteMapping("/deleteById")
     public String deleteStudentById(@RequestParam Long id,@RequestParam String name){
         studentService.deleteById(id);
@@ -36,6 +39,7 @@ public class StudentController {
     }
     @GetMapping("/findAllStudent")
     public List<Student> findAllStudent(){
+        log.info("in find all student method");
         return studentService.findAllStudents();
     }
 }

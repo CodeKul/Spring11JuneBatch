@@ -6,3 +6,28 @@
 
 Need for Spring AOP
 - provides pluggable way of dynamically adding additional concern before, after or around the actual logic
+
+Terminologies:
+1. Aspect
+2. Join Point
+3. Advice
+	- action taken either before or after the execution of method
+	- piece of code
+4. PointCut
+
+Types of Advice
+1. Before
+	- run the advice before the execution of method
+2. After
+	- run the advice after the execution of method regardless of the outcome
+3. After-returning
+	- run the advice after the execution of method only after the successful completion of the method
+4. After-throwing
+	- run the advice after the execution of method only if the method exits throwing an exception
+5. Around
+	- run the advice before & after advice method
+
+Steps:
+1. Add AOP dependency
+2.
+
