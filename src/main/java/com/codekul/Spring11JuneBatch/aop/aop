@@ -10,10 +10,17 @@ Need for Spring AOP
 Terminologies:
 1. Aspect
 2. Join Point
+	- a point during the execution of a program, such as a method or handling of an exception
+	- a specific point in application such as method execution, exception handling, changing object variable values.
+
 3. Advice
 	- action taken either before or after the execution of method
 	- piece of code
 4. PointCut
+	- basically those JoinPoints where we can put our advice
+	- subset of JoinPoints
+	- expression that are matched with join points to determine whether advice needs to be executed or not.
+	- Spring framework uses the AspectJ pointcut expression language
 
 Types of Advice
 1. Before
@@ -26,6 +33,8 @@ Types of Advice
 	- run the advice after the execution of method only if the method exits throwing an exception
 5. Around
 	- run the advice before & after advice method
+	- most important & powerful advice
+
 
 Steps:
 1. Add AOP dependency
