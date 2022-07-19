@@ -19,6 +19,11 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public List<Student> findByAgeGreaterThan(Integer age) {
+        return studentRepository.findByAgeGreaterThan(age);
+    }
+
+    @Override
     public void saveStudent(Student student) {
         studentRepository.save(student);
     }

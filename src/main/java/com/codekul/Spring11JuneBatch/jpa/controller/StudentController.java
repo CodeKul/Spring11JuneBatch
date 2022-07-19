@@ -42,4 +42,10 @@ public class StudentController {
         log.info("in find all student method");
         return studentService.findAllStudents();
     }
+
+    @GetMapping("/findStudentByAge")
+    public List<Student> findStudentByAge(@RequestParam Integer age){
+        log.info("in find Student By Age method");
+        return studentService.findByAgeGreaterThan(20);
+    }
 }

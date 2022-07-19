@@ -7,6 +7,9 @@ import java.util.List;
 public interface StudentService {
 
     List<Student> findByName(String nm);
+
+    List<Student> findByAgeGreaterThan(Integer age);
+
     void saveStudent(Student student);
     void deleteById(Long id);
 
