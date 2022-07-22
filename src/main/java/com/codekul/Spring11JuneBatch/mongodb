@@ -1,0 +1,30 @@
+- NoSQL database
+Types of Database Management System
+1. RDBMS
+2. NoSQL
+3. OLAP(Online Analytical Processing)
+
+NoSQL
+- scalable & faster
+
+when to use NoSql
+- want to store & retrieve huge amount of data
+- relationship between the data are not important
+- data is not structured
+- data is growing continuously
+
+MongoDB
+- open source
+- document oriented database that means data is stored in the form of documents(Key-Value pair)
+
+	database----> database
+	table-------> Collections
+	rows--------> Document
+	columns------> fields
+
+Commands
+1. use springpractice
+2. show dbs;
+3. db.user.insert({name:"aditya",age:25});
+4. db.user.find().pretty();
+5. db.dropDatabase();
