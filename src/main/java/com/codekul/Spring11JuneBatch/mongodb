@@ -28,3 +28,14 @@ Commands
 3. db.user.insert({name:"aditya",age:25});
 4. db.user.find().pretty();
 5. db.dropDatabase();
+6.
+db.createUser(
+  {
+    user: "admin",
+    pwd:  passwordPrompt(),
+    roles: [ { role: "readWrite", db: "springpractice" },
+             { role: "read", db: "test" } ]
+  }
+)
+
+7.  mongosh --port 27017 -u "admin" --authenticationDatabase "springpractice" -p
