@@ -39,3 +39,5 @@ db.createUser(
 )
 
 7.  mongosh --port 27017 -u "admin" --authenticationDatabase "springpractice" -p
+8. db.customer.createIndex({city:"text",customerName:"text"});
+9. db.customer.find({address:{$regex: 'Near Sadashiv PETH',$options:"i"}});

@@ -2,6 +2,7 @@ package com.codekul.Spring11JuneBatch.mongo.controller;
 
 import com.codekul.Spring11JuneBatch.mongo.domain.Customer;
 import com.codekul.Spring11JuneBatch.mongo.repository.CustomerRepository;
+import com.codekul.Spring11JuneBatch.util.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -55,12 +56,12 @@ public class CustomerController {
         } else {
             map.put(STATUS, HttpStatus.NOT_FOUND.value());
             map.put(MESSAGE, "No customer found");
-            return new ResponseEntity<>(map,HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(map, HttpStatus.NOT_FOUND);
         }
     }
 
     @GetMapping("/getCustomer")
-    public ResponseEntity<?> findCustomer(@RequestParam String searchString){
+    public ResponseEntity<?> findCustomer(@RequestParam String searchString) {
         map.clear();
         Optional<List<Customer>> customerOptional = customerRepository.findByCityOrContactNoOrCustomerName(searchString);
         if (customerOptional.isPresent()) {
@@ -72,6 +73,24 @@ public class CustomerController {
         } else {
             map.put(STATUS, HttpStatus.NOT_FOUND.value());
             map.put(MESSAGE, "No customer found");
-            return new ResponseEntity<>(map,HttpStatus.NOT_FOUND);
-        }    }
+            return new ResponseEntity<>(map, HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/searchCustomer")
+    public ResponseEntity<?> searchCustomer(@RequestParam String searchString){
+        ApiResponse<List<Customer>>  apiResponse = new ApiResponse<>();
+        Optional<List<Customer>> customerOptional = customerRepository.searchCustomer(searchString);
+        if (customerOptional.isPresent()) {
+            apiResponse.setResult(customerOptional.get());
+            apiResponse.setStatus(200);
+            apiResponse.setMessage("search customer");
+            return ResponseEntity.ok(apiResponse);
+
+        } else {
+            apiResponse.setStatus( HttpStatus.NOT_FOUND.value());
+            apiResponse.setMessage("No customer found");
+            return new ResponseEntity<>(apiResponse, HttpStatus.NOT_FOUND);
+        }
+    }
 }

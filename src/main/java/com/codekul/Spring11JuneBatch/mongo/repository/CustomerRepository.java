@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface CustomerRepository extends MongoRepository<Customer,String> {
+    @Query("{city: {$regex:?0,$options:'i'}}")
     List<Customer> findByCity(String city);
 
     @Query("{ $and:[{city:?0},{contactNo:?1}]}")
@@ -15,4 +16,7 @@ public interface CustomerRepository extends MongoRepository<Customer,String> {
 
     @Query("{ $or:[{city:?0},{contactNo:?0},{customerName:?0}]}")
     Optional<List<Customer>> findByCityOrContactNoOrCustomerName(String searchString);
+
+    @Query("{$text: {$search: ?0}}")
+    Optional<List<Customer>> searchCustomer(String searchString);
 }
