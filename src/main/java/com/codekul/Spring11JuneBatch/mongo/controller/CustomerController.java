@@ -4,6 +4,7 @@ import com.codekul.Spring11JuneBatch.mongo.domain.Customer;
 import com.codekul.Spring11JuneBatch.mongo.repository.CustomerRepository;
 import com.codekul.Spring11JuneBatch.util.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,10 +18,14 @@ import static com.codekul.Spring11JuneBatch.util.Constants.MESSAGE;
 import static com.codekul.Spring11JuneBatch.util.Constants.STATUS;
 
 @RestController
-@RequestMapping("/api/customer")
+@RequestMapping("/customer")
 public class CustomerController {
     @Autowired
     private CustomerRepository customerRepository;
+
+    @Value("${app.title}")
+    private String appTitle;
+
     private Map<String, Object> map = new HashMap<>();
 
     @PostMapping
@@ -92,5 +97,13 @@ public class CustomerController {
             apiResponse.setMessage("No customer found");
             return new ResponseEntity<>(apiResponse, HttpStatus.NOT_FOUND);
         }
+    }
+    @GetMapping("/getProperties")
+    public ResponseEntity<?> getProperties(){
+        ApiResponse<String> apiResponse = new ApiResponse<>();
+        apiResponse.setMessage("Get Properties");
+        apiResponse.setResult("App Title : "+appTitle);
+        apiResponse.setStatus(HttpStatus.OK.value());
+        return ResponseEntity.ok(apiResponse);
     }
 }

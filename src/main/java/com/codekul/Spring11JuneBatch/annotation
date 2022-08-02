@@ -47,3 +47,6 @@
 	- used to join a new column, this will be the foreign key column
 
 17.  @JsonManagedReference
+
+18. @Value
+	- to read application properties

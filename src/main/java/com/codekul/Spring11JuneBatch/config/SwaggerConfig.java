@@ -14,14 +14,14 @@ import static springfox.documentation.builders.PathSelectors.regex;
 @Configuration
 @EnableWebMvc
 public class SwaggerConfig {
-    private static  final String DEFAULT_INCLUDE_PATTERN = "/api.*";
+   // private static  final String DEFAULT_INCLUDE_PATTERN = "/api.*";
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.any())
-                //.paths(PathSelectors.any())
-                .paths(regex(DEFAULT_INCLUDE_PATTERN))
+                .paths(PathSelectors.any())
+              //  .paths(regex(DEFAULT_INCLUDE_PATTERN))
                 .build();
     }
 }
