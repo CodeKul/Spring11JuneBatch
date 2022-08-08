@@ -50,3 +50,9 @@
 
 18. @Value
 	- to read application properties
+
+19. @Embeddable & @EmbeddedId
+	- represent composite keys
+
+20. @JsonInclude(JsonInclude.Include.NON_NULL)
+
