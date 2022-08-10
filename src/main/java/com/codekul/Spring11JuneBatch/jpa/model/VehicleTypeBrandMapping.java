@@ -1,7 +1,11 @@
 package com.codekul.Spring11JuneBatch.jpa.model;
 
-import javax.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.*;
+@Getter
+@Setter
 @Entity
 public class VehicleTypeBrandMapping {
     @EmbeddedId
